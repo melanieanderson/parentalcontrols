@@ -13,6 +13,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     Button bLogin;
     EditText etUsername, etPassword;
     TextView tvRegisterLink;
+    UserLocal userLocal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -26,6 +27,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         bLogin.setOnClickListener(this);
         tvRegisterLink.setOnClickListener(this);
+        userLocal = new UserLocal(this);
 
     }
 
@@ -33,6 +35,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.bLogin:
+
+                User user = new User(null,null);
+                userLocal.storeUserData(user);
+                userLocal.setUserLoggedIn(true);
 
                 break;
 
