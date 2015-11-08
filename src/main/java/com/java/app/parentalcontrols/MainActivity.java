@@ -1,6 +1,7 @@
 package com.java.app.parentalcontrols;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.bLogout:
+
+                startActivity(new Intent(this, Login.class));
                 break;
         }
     }
